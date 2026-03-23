@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psicologia cognitiva e terapia cognitiva de Beck</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 30vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>Psicologia cognitiva e terapias cognitivas</h1>
+        <h2>Visão geral e a terapia cognitiva de Beck</h2>
+      </section>
+
+      <section>
+        <h2>Objetivos da aula</h2>
+        <ul>
+          <li>Traçar um breve histórico da psicologia cognitiva e das terapias cognitivas.</li>
+          <li>Apresentar conceitos básicos das terapias cognitivas: tríade cognitiva, modelo cognitivo.</li>
+          <li>Apresentar o modelo de terapia cognitiva de Aaron Beck e alguns de seus componentes: conceitualização, níveis de cognição, princícipios do tratamento, estrutura de sessão.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contexto histórico</h2>
+        <ul>
+          <li>Na década de 1960, teorias psicanalíticas dominavam a psicologia clínica e a psiquiatria.</li>
+          <li>Ao mesmo tempo, a pesquisa acadêmica em psicologia era dominada pelo paradigma behaviorista.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contexto histórico</h2>
+        <blockquote class="slide-quote">
+          <p>“O poder, as honras, a autoridade, os livros, os lucros, tudo relacionado à psicologia estava nas mãos da escola behaviorista [...] aqueles que desejassem ser psicólogos científicos não podiam opor-se ao behaviorismo. Senão, ficariam desempregados.”</p>
+          <footer>— <cite>George Miller</cite></footer>
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Contexto histórico</h2>
+        <ul>
+          <li>A partir dos anos 1960/1970 cresceu o questionamento sobre a eficácia da psicanálise no tratamento de transtornos mentais.</li>
+          <li>Observa-se também, dentro comunidade acadêmica, uma flexibilização das diretrizes do manifesto behaviorista.</li>
+          <li>Disseminação da analogia do computador.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Desenvolvimentos iniciais</h2>
+        <ul>
+          <li>George Miller (1956) - O Mágico Número Sete.</li>
+          <li>Ulric Neisser (1967) - Psicologia Cognitiva.</li>
+          <li>Albert Ellis (1962) - Terapia Racional Emotiva Comportamental.</li>
+          <li>Aaron Beck (1979) - Terapia Cognitiva da Depressão.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aaron Beck: trajetória da pesquisa</h2>
+        <ul>
+          <li>Psicanalista e professor na Universidade da Filadélfia.</li>
+          <li>Estudos sobre depressão e conteúdos dos sonhos.</li>
+          <li>Conclusão: <strong>padrões cognitivos</strong> explicariam o viés negativo sobre <em>si</em>, o <em>ambiente</em> e o <em>futuro</em> (tríade cognitiva).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aaron Beck: trajetória da pesquisa</h2>
+        <ul>
+          <li>Apontar distorções cognitivas negativas produz melhora no humor e no comportamento de pacientes deprimidos.</li>
+          <li>Resultaods das pesquisas são sistematizados em <em>Terapia Cognitiva da Depressão</em> em 1979.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo cognitivo - antecedentes filosóficos</h2>
+        <ul>
+          <li><strong>Estoicismo</strong> enfatiza que emoções têm base no <strong>pensamento</strong> e na mente em constante atividade.</li>
+          <li>Epicteto (século I d.C.): “O que perturba o ser humano não são os fatos, mas a <strong>interpretação</strong> que ele faz destes.”</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo cognitivo - princípios básicos</h2>
+        <ul>
+          <li>Mais que os fatos, a <strong>forma como o indivíduo os interpreta</strong> influencia como se sente e se comporta.</li>
+          <li>O sofrimento psicológico envolve <strong>distorções de conteúdo</strong> típicas da patologia e "vícios" na interpretação dos fatos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo cognitivo - princípios básicos</h2>
+        <ul>
+          <li>A atividade cognitiva influencia o comportamento.</li>
+          <li>A atividade cognitiva pode ser monitorada e alterada.</li>
+          <li>Mudanças na cognição determinam mudanças no comportamento.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo cognitivo</h2>
+        <img src="img-01.png" alt="Modelo cognitivo" class="slide-image-modern">
+      </section>
+
+      <section>
+        <h2>Terapia cognitiva de Beck</h2>
+        <ul>
+          <li>Psicoterapia focal baseada no modelo cognitivo.</li>
+          <li>Modificar pensamentos disfuncionais leva à melhora sintomática.</li>
+          <li>A revisão de crenças disfuncionais subjacentes leva a ganhos mais abrangentes e duradouros.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Os três níveis de cognição</h2>
+        <p>A terapia cognitiva de Beck se concentra na identificação e modificação de cognições em três níveis:</p>
+        <ul>
+          <li>Pensamentos automáticos</li>
+          <li>Crenças intermediárias</li>
+          <li>Crenças nucleares</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Os três níveis de cognição</h2>
+        <h3>Pensamentos automáticos</h3>
+        <p>Superficiais, espontâneos, telegráficos, repetitivos, pouco questionados; forte emoção negativa; mais fáceis de identificar.</p>
+      </section>
+
+      <section>
+        <h2>Os três níveis de cognição</h2>
+        <h3>Crenças intermediárias</h3>
+        <p>Regras e pressupostos que permitem conviver com ideias absolutas e não adaptativas; funcionam como mecanismo de sobrevivência frente às crenças nucleares.</p>
+      </section>
+
+      <section>
+        <h2>Os três níveis de cognição</h2>
+        <h3>Crenças nucleares</h3>
+        <p>Mais profundas, ligadas à infância, absolutas e rígidas sobre o si; interação entre predisposição genética, hipersensibilidade a rejeição/abandono e ambiente.</p>
+      </section>
+
+      <section>
+        <h2>Conceitualização cognitiva</h2>
+        <ul>
+          <li>É o <em>mapa</em> que organiza o tratamento.</li>
+          <li>Permite foco compartilhado entre paciente e terapeuta e compreensão de como o paciente se estruturou para sobreviver e se proteger.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Conceitualização cognitiva</h2>
+        <h3>Elementos fundamentais</h3>
+        <ul>
+          <li>Dados relevantes da história do paciente.</li>
+          <li>Pensamentos automáticos, sentimentos e condutas em situações cotidianas.</li>
+          <li>Crenças intermediárias e nucleares.</li>
+          <li>Estratégias compensatórias.</li>
+          <li>Diagnóstico clínico.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><a href="https://github.com/psiguilhermedias/aulas/blob/ad0aa97446a0106d9c44790b3a641cdc107e0aee/aula-04/dcc.pdf">Conceitualização cognitiva</a></h2>
+        <img src="img-02.png" alt="Conceitualização cognitiva" class="slide-image-modern">
+      </section>
+
+
+      <section>
+        <h2>Características do tratamento</h2>
+        <ul>
+          <li>Abordagem estruturada, diretiva e colaborativa.</li>
+          <li>Relação terapêutica sólida é fundamental.</li>
+          <li>Forte componente educacional.</li>
+          <li>Foco no <em>aqui e agora</em>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Estrutura típica da sessão</h2>
+        <ul>
+          <li>Verificação do humor - escalas como <strong>BDI</strong>.</li>
+          <li>Estabelecimento da agenda; revisão da tarefa da sessão anterior; priorização dos temas do dia.</li>
+          <li>Discussão dos itens da agenda.</li>
+          <li>Tarefa de casa.</li>
+          <li>Verificação do humor.</li>
+          <li>Feedback do paciente.</li>
+        </ul>
+      </section>
+
+      <section class="slide-vignette-compact">
+        <h2>Exercício</h2>
+        <p>Carla, 34 anos, relata ansiedade intensa em consultas odontológicas e, há cerca de oito anos, evita consultas de rotina. Na infância, passou por uma extração vivida com muito medo e sensação de perda de controle na cadeira; já adulta, lembra-se com constrangimento de um comentário desajeitado de um dentista sobre higiene. Desde então costuma cancelar consultas em cima da hora e adiar novas marcações. Foi encaminhada ao serviço de saúde mental depois de chorar na recepção ao tentar agendar uma restauração, e, desde que recebeu o lembrete da próxima consulta, dorme mal, sente taquicardia e pensa em desmarcar de novo. Afirma que vai “doer horrores”, que vai “passar vergonha” e que “os dentistas acham que a gente é porca”; teme desmaiar ou gritar no consultório e conclui: “sempre fui fraca para essas coisas.”</p>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({ hash: true });
+  </script>
+</body>
+</html>
