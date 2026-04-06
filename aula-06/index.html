@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infância - Desenvolvimento humano e saúde infantil</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 30vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Infância</h1>
+        <h2>Desenvolvimento humano e saúde infantil</h2>
+      </section>
+
+      <section>
+        <h2>Objetivos da aula</h2>
+        <ul>
+          <li>Descrever área do desenvolvimento humano.</li>
+          <li>Definir conceitos básicos do desenvolvimento humano.</li>
+          <li>Identificar alguns marcos de desenvolvimento típico na infância.</li>
+          <li>Descrever a área da psicologia pediátrica e suas contribuições para a saúde infantil.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que é desenvolvimento humano?</h2>
+        <ul>
+          <li>É o estudo científico dos processos sistemáticos de mudanças e de estabilidade que ocorrem nas pessoas.</li>
+          <li>Cobre todo o ciclo de vida, desde a concepção até à maturidade.</li>
+          <li>Busca descrever, explicar, prever e intervir.</li>
+          <li>É um campo interdisciplinar.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Domínios do desenvolvimento</h2>
+        <ul>
+          <li>O estudo do desenvolvimento é organizado em três grandes aspectos:</li>
+          <li>Físico.</li>
+          <li>Cognitivo.</li>
+          <li>Psicossocial.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Domínio físico</h2>
+        <ul>
+          <li>Inclui crescimento do corpo, mudanças no cérebro, desenvolvimento das capacidades sensoriais e motoras.</li>
+          <li>Exemplo: uma criança que adquire destreza para escovar os dentes sem auxílio de uma pessoa adulta.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Domínio cognitivo</h2>
+        <ul>
+          <li>Abrange mudanças nas capacidades de atenção, memória, linguagem, pensamento, raciocínio. aprendizagem e criatividade.</li>
+          <li>Exemplo: a criança passa a ser capaz de entender uma explicação simples sobre higiene bucal.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Domínio psicossocial</h2>
+        <ul>
+          <li>Trata de mudanças nas emoções, personalidade e relações sociais.</li>
+          <li>Exemplo: a presença de um cuidador pode ajudar a criança a manejar o medo no consultório.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Interconexão entre os domínios</h2>
+        <ul>
+          <li>Os domínios são categorias que facilitam o estudo do desenvolvimento.</li>
+          <li>Mudanças em um domínio podem afetar outros domínios.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Períodos do ciclo de vida</h2>
+        <ul>
+          <li>A divisão do ciclo de vida em períodos é uma construção social.</li>
+          <li>Necessidades a serem satisfeitas e tarefas a serem realizadas em cada período.</li>
+        </ul>
+      </section>
+
+      <section class="slide-life-cycle-timeline">
+        <h2>Períodos do ciclo de vida</h2>
+        <div
+          class="life-cycle-timeline"
+          role="img"
+          aria-label="Linha do tempo dos oito períodos: pré-natal; primeira infância; segunda infância; terceira infância; adolescência; início da idade adulta; meio da idade adulta; fim da idade adulta."
+        >
+          <div class="life-cycle-timeline__row">
+            <div class="life-cycle-timeline__row-line" aria-hidden="true"></div>
+            <div class="life-cycle-timeline__stops">
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Período pré-natal</span>
+                <span class="life-cycle-timeline__age">Concepção ao nascimento</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Primeira infância</span>
+                <span class="life-cycle-timeline__age">Nascimento aos 3 anos</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Segunda infância</span>
+                <span class="life-cycle-timeline__age">3 a 6 anos</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Terceira infância</span>
+                <span class="life-cycle-timeline__age">6 a 11 anos</span>
+              </div>
+            </div>
+          </div>
+          <div class="life-cycle-timeline__row">
+            <div class="life-cycle-timeline__row-line" aria-hidden="true"></div>
+            <div class="life-cycle-timeline__stops">
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Adolescência</span>
+                <span class="life-cycle-timeline__age">11 a 20 anos</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Adultez emergente</span>
+                <span class="life-cycle-timeline__age">20 a 40 anos</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Vida adulta intermediária</span>
+                <span class="life-cycle-timeline__age">40 a 65 anos</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Vida adulta tardia</span>
+                <span class="life-cycle-timeline__age">65 anos em diante</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Influências no desenvolvimento</h2>
+        <ul>
+          <li>Hereditariedade: características herdadas geneticamente.</li>
+          <li>Maturação: desdobramento de uma sequência natural de mudanças no corpo e no cérebro.</li>
+          <li>Ambiente: tudo o que está "do lado de fora".</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ambiente - Contextos de desenvolvimento</h2>
+        <ul>
+          <li>Família: família nuclear, família extensa.</li>
+          <li>Nível socioeconômico: escolaridade, ocupação e renda de cuidadores.</li>
+          <li>Cultura e sociedade: valores, costumes e expectativas sobre infância.</li>
+        </ul>
+      </section>
+
+      <section class="slide-table-milestones">
+        <h2>Desenvolvimentos na infância</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Período</th>
+              <th>Físico</th>
+              <th>Cognitivo</th>
+              <th>Psicossocial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primeira infância<br>(0 aos 3 anos)</td>
+              <td>Cérebro em rápida complexificação; crescimento e desenvolvimento motor rápidos.</td>
+              <td>Aprender e lembrar desde as primeiras semanas; símbolos e resolução de problemas ao final do 2º ano; desenvolvimento da linguagem rápido.</td>
+              <td>Vínculos com pais e outros; autoconsciência; da dependência à autonomia.</td>
+            </tr>
+            <tr>
+              <td>Segunda infância<br>(3 a 6 anos)</td>
+              <td>Crescimento estável; proporções "de adulto"; sono e apetite oscilam; lateralidade; motricidade e força melhoram.</td>
+              <td>Pensamento egocêntrico; ideias ilógicas; memória e linguagem melhoram.</td>
+              <td>Autoconceito e emoções mais complexos; brincar imaginativo e social; família ainda é o foco da vida social.</td>
+            </tr>
+            <tr>
+              <td>Terceira infância<br>(6 a 11 anos)</td>
+              <td>Crescimento mais lento; força e habilidades atléticas.</td>
+              <td>Menos egocentrismo; lógica concreta; memória e linguagem melhoram.</td>
+              <td>Autoconceito mais elaborado; corregulação; colegas ganham papel central.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Infância e saúde</h2>
+        <ul>
+          <li>A preocupação com aspectos particulares da saúde de crianças e adolescentes é recente.</li>
+          <li>Ao final do século XIX, compreende-se a infância como um período de vida com necessidades específicas.</li>
+          <li>A partir da segunda metade do século XX, observa-se maior avanço na área da saúde infantil.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Psicologia pediátrica</h2>
+        <ul>
+          <li>Subárea da psicologia da saúde com foco na saúde de crianças e adolescentes.</li>
+          <li>Foco no desenvolvimento físico, cognitivo e psicossocial de crianças e adolescentes e suas relações com saúde e doença.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Psicologia pediátrica</h2>
+        <p>Objetivos:</p>
+        <ul>
+          <li>Promover a saúde e prevenir doenças na infância e adolescência.</li>
+          <li>Intervir para melhorar a condição de crianças e adolescentes adoecidos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Fatores de risco e protetivos</h2>
+        <p>Risco:</p>
+        <ul>
+          <li>Contextos de pobreza e violência.</li>
+        </ul>
+        <p>Protetivos:</p>
+        <ul>
+          <li>Segurança.</li>
+          <li>Boa nutrição.</li>
+          <li>Estímulos adequados ao desenvolvimento.</li>
+          <li>Estabelecimento de boas relações sociais.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Intervenções</h2>
+        <ul>
+          <li>Intervenções psicoeducativas direcionadas a cuidadores.</li>
+          <li>Programas de estimulação precoce voltados a crianças em situação de risco.</li>
+          <li>Intervençõoes para adaptação a doenças crônicas.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({ hash: true });
+  </script>
+</body>
+</html>
