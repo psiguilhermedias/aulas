@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adultez jovem e intermediária — Desenvolvimento humano e saúde</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 30vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Adultez jovem e intermediária</h1>
+        <h2>Desenvolvimento humano e saúde</h2>
+      </section>
+
+      <section>
+        <h2>Objetivos da aula</h2>
+        <ul>
+          <li>Descrever aspectos do desenvolvimento físico, cognitivo e psicossocial na adultez jovem.</li>
+          <li>Descrever aspectos do mesmos domínios na adultez intermediária.</li>
+        </ul>
+      </section>
+
+      <section class="slide-life-cycle-timeline">
+        <h2>Duas fases em foco</h2>
+        <div
+          class="life-cycle-timeline"
+          role="img"
+          aria-label="Linha do tempo: adultez jovem de cerca de 20 a 40 anos; adultez intermediária de 40 a 65 anos."
+        >
+          <div class="life-cycle-timeline__row">
+            <div class="life-cycle-timeline__row-line" aria-hidden="true"></div>
+            <div class="life-cycle-timeline__stops">
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Adultez jovem</span>
+                <span class="life-cycle-timeline__age">Cerca de 20 a 40 anos</span>
+              </div>
+              <div class="life-cycle-timeline__stop">
+                <span class="life-cycle-timeline__dot" aria-hidden="true"></span>
+                <span class="life-cycle-timeline__label">Adultez intermediária</span>
+                <span class="life-cycle-timeline__age">Cerca de 40 a 65 anos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Duas fases em foco</h2>
+        <ul>
+          <li>Adultez jovem (adultez emergente): período de transição prolongada, com exploração de papéis antes de compromissos mais estáveis.</li>
+          <li>Adultez intermediária (meia-idade): construção social delimitada de maneira arbitrária e sensível a fatores subjetivos e culturais.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez jovem - Contexto da transição</h2>
+        <ul>
+          <li>Três critérios para "ser adulto": tomar decisões independentes, assumir responsabilidade por si e buscar independência financeira.</li>
+          <li>O tempo para atingir essas metas alongou-se e os caminhos diversificaram-se.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez jovem - Desenvolvimento físico</h2>
+        <ul>
+          <li>Período em que a saúde é boa e se consolida a base para o funcionamento físico ao longo do resto vida.</li>
+          <li>Fatores de influência direta: alimentação, atividade física, sono, estresse, consumo de tabaco, álcool e outras drogas.</li>
+          <li>Fatores de influência indireta: educação, renda, raça/etnia e relacionamentos sociais.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez jovem - Desenvolvimento cognitivo</h2>
+        <ul>
+          <li>Pensamento reflexivo: consideração ativa, persistente e cuidadosa das informações e crenças, levando em conta as evidências que as sustentam e as conclusões a que elas levam.</li>
+          <li>Pensamento pós-formal: mais flexível e sensível ao contexto do que o pensamento formal.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez jovem - Desenvolvimento psicossocial</h2>
+        <ul>
+          <li>Consolidação da identidade adulta, que envolve a gradual transferência de tomada de decisões e responsabilidade da família de origem para o jovem adulto.</li>
+          <li>Desenvolvimento da capacidade de estabelecer e manter relacionamentos íntimos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez intermediária - Contexto da transição</h2>
+        <ul>
+          <li>Período de exercício da competência, domínio sobre o ambiente e crescimento, mas também de início de declínio.</li>
+          <li>Fase marcada pela multiplicidade de trajetórias de vida: alguns correm maratonas, outros tem dificuldade para subir escadas.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez intermediária - Desenvolvimento físico</h2>
+        <ul>
+          <li>Mudanças sensoriais e motoras costumam ser graduais: redução da visão, audição, destreza e força muscular.</li>
+          <li>A menopausa (cessamento da ovulação e menstruação) tem implicações físicas e psicossociais diversos.</li>
+          <li>Fatores que influenciam a saúde são similares aos da adultez jovem.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez intermediária - Desenvolvimento cognitivo</h2>
+        <ul>
+          <li>Podem ocorrer perdas graduais em velocidade de processamento e em algumas tarefas de memória.</li>
+          <li>Perdas são compensadas pelo conhecimento acumulado, estratégias consolidadas e capacidade de julgamento prático.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez intermediária - Desenvolvimento cognitivo</h2>
+        <ul>
+          <li>O desempenho criativo pode permanecer alto e atingir picos em diferentes momentos desta fase.</li>
+          <li>Adultos maduros frequentemente integram razão e emoção de modo mais contextualizado do que em estágios anteriores.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez intermediária - Desenvolvimento psicossocial</h2>
+        <ul>
+          <li>Desenvolvimento da identidade: integração de diferentes aspectos da self.</li>
+          <li>Generatividade: motivação para contribuir com o desenvolvimento da próxima geração.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Adultez intermediária - Desenvolvimento psicossocial</h2>
+        <ul>
+          <li>Relacionamentos continuam centrais: amizades, parceirias românticas, vínculos com filhos em transição para a vida adulta, pais idosos e com netos, conforme o caso.</li>
+          <li>A ideia de uma "crise" obrigatória da meia-idade não encontra apoio robusto na literatura científica.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Implicações para a prática em odontologia</h2>
+        <ul>
+          <li>Elementos de contexto variam de acordo com os momentos de vida, impactando comportamentos em saúde.</li>
+          <li>As variações impactam também os recursos disponíveis para cuidado e tratamento.</li>
+          <li>Intervenções em saúde efetivas devem considerar aspectos associados a cada momento de vida.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({ hash: true });
+  </script>
+</body>
+</html>
