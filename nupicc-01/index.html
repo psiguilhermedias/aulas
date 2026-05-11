@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inteligência Artificial e Aprendizagem de Máquina</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 25vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+    .reveal pre {
+      position: relative;
+      margin: 0.75em 0 0;
+      padding: 0.65em 2.35em 0.65em 0.85em;
+      text-align: left;
+      max-width: 100%;
+      border-radius: 8px;
+      background: #020617;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.8);
+    }
+
+    .reveal pre code {
+      display: block;
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      font-size: 1.2em;
+      line-height: 1.45;
+      color: #e2e8f0;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .reveal a.code-run-link {
+      position: absolute;
+      top: 50%;
+      right: 0.45em;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.85em;
+      height: 1.85em;
+      margin: 0;
+      padding: 0;
+      border-bottom: none;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.75);
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35);
+      opacity: 0.9;
+      color: var(--r-link-color);
+    }
+
+    .reveal a.code-run-link:hover {
+      border-bottom: none;
+      opacity: 1;
+      color: var(--r-link-color-hover);
+      background: rgba(30, 58, 95, 0.85);
+    }
+
+    .reveal a.code-run-link .code-run-link__icon {
+      width: 1.05em;
+      height: 1.05em;
+      flex-shrink: 0;
+    }
+
+    .reveal .callout {
+      margin-top: 0.9em;
+      padding: 0.7em 0.95em;
+      border-left: 4px solid #a78bfa;
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.78em;
+      line-height: 1.45;
+      box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.35);
+    }
+
+    .reveal .callout strong {
+      color: #c4b5fd;
+    }
+
+    .reveal .callout p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .reveal .compare-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.55em;
+      line-height: 1.4;
+    }
+
+    .reveal .compare-table th,
+    .reveal .compare-table td {
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.45em 0.6em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .compare-table th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .reveal .svg-diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.6em auto;
+    }
+
+    .reveal .svg-diagram svg {
+      max-width: 100%;
+      max-height: 42vh;
+      height: auto;
+    }
+
+    .reveal .diagram-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.8em;
+    }
+
+    .reveal .diagram-row figure {
+      flex: 1;
+      margin: 0;
+      text-align: center;
+    }
+
+    .reveal .diagram-row figcaption {
+      margin-top: 0.4em;
+      font-size: 0.65em;
+      color: #cbd5e1;
+    }
+
+    .reveal .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      margin: 0.6em 0;
+    }
+
+    .reveal .tag-list span {
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.18);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #bfdbfe;
+      font-size: 0.7em;
+      font-weight: 500;
+    }
+
+    .reveal .two-col-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .reveal .three-col-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .reveal .three-col-text h3 {
+      color: #a5b4fc;
+      font-size: 0.85em;
+      margin: 0 0 0.35em;
+    }
+
+    .reveal .three-col-text p,
+    .reveal .three-col-text li {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .three-col-text ul {
+      margin-top: 0.2em;
+    }
+
+    .reveal .two-col-text h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0 0 0.35em;
+    }
+
+    .reveal .two-col-text ul {
+      margin-top: 0.2em;
+    }
+
+    .reveal .two-col-text li {
+      font-size: 0.78em;
+      line-height: 1.45;
+    }
+
+    .reveal .equation-box {
+      margin: 0.6em 0;
+      padding: 0.6em 0.85em;
+      background: rgba(2, 6, 23, 0.7);
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      text-align: center;
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      font-size: 0.85em;
+      color: #e2e8f0;
+    }
+
+    .reveal .key-points {
+      margin-top: 0.5em;
+      padding: 0.65em 0.9em;
+      background: rgba(30, 58, 95, 0.4);
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      font-size: 0.78em;
+      line-height: 1.45;
+    }
+
+    .reveal .key-points strong {
+      color: #bae6fd;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Inteligência Artificial e Aprendizagem de Máquina</h1>
+        <h2>Uma breve introdução</h2>
+      </section>
+
+      <section>
+        <h2>Roteiro</h2>
+        <ol>
+          <li>Aprendizagem supervisionada</li>
+          <li>Árvores de decisão</li>
+          <li>Seleção e otimização de modelos</li>
+          <li>Ensemble learning</li>
+          <li>Deep learning</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Aprendizagem supervisionada</h2>
+        <p>Dado um conjunto de <strong>n</strong> pares entrada–saída</p>
+        <div class="equation-box">{(x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), &hellip;, (x<sub>n</sub>, y<sub>n</sub>)}</div>
+        <p>gerados por uma função desconhecida <strong>y = f(x)</strong>,</p>
+        <p>descubra uma função <strong>h</strong> que aproxima <strong>f</strong>.</p>
+      </section>
+
+      <section>
+        <h2>Exemplo - Rastreio de depressão com o PHQ-9</h2>
+        <div class="compare-table">
+          <table>
+            <thead>
+              <tr><th>Participante</th><th>Respostas ao PHQ-9 (x)</th><th>Diagnóstico (y)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>(3, 2, 3, 1, 2, 3, 2, 1, 2)</td><td>sim</td></tr>
+              <tr><td>2</td><td>(0, 1, 0, 0, 1, 0, 0, 1, 0)</td><td>não</td></tr>
+              <tr><td>3</td><td>(2, 3, 2, 3, 3, 2, 3, 2, 3)</td><td>sim</td></tr>
+              <tr><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td></tr>
+              <tr><td>n</td><td>(1, 0, 1, 0, 0, 1, 0, 1, 0)</td><td>não</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Aprendizagem supervisionada</h2>
+        <ul>
+          <li><strong>h</strong> é a hipótese escolhida de um <strong>espaço de hipóteses</strong> <strong>H</strong> (todas as retas, todas os polinômios de grau 2, todas as árvores de decisão com profundidade 5).</li>
+          <li><strong>x</strong> é o vetor de atributos da entrada (idade, escores em escalas, exames laboratoriais, &hellip;).</li>
+          <li><strong>y</strong> é o saída, o valor que queremos predizer.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Diferentes espaços de hipóteses</h2>
+        <img class="slide-image-modern" src="img/bias-variance.png" alt="Exemplos de viés e variância">
+        <p style="font-size:0.45em; color:#94a3b8; margin-top:0.5em;">Fonte: Russell, S. e Norvig, P. (2021). Artificial Intelligence: A Modern Approach, 4ª ed.</p>
+      </section>
+
+      <section>
+        <h2>Viés e variância</h2>
+        <p>Propriedades associadas aos espaços de hipóteses.</p>
+        <div class="two-col-text">
+          <div>
+            <h3>Viés (<em>bias</em>)</h3>
+            <p>Tendência de desviar sistematicamente do valor esperado.</p>
+            <ul>
+              <li>Alto viés: as hipóteses são simples demais para capturar a relação real.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Variância</h3>
+            <p>O quanto as hipóteses mudam em resposta a mudanças nos dados de treinamento.</p>
+            <ul>
+              <li>Alta variância: as hipóteses são bastante sensíveis a flutuações nos dados.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Subajuste e sobreajuste</h2>
+        <div class="two-col-text">
+          <div>
+            <h3>Subajuste (<em>underfitting</em>)</h3>
+            <ul>
+              <li>O modelo é simples demais e não consegue capturar os padrões presentes nos dados.</li>
+              <li>Desempenho ruim tanto nos dados de treinamento quanto em dados novos.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sobreajuste (<em>overfitting</em>)</h3>
+            <ul>
+              <li>O modelo é complexo demais e "decora" os dados de treinamento, incluindo o ruído.</li>
+              <li>Bom desempenho no treinamento, mas ruim em dados novos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Árvore</h2>
+        <div class="svg-diagram" aria-label="Representação gráfica de uma árvore genérica com raiz, nós internos e folhas">
+          <svg viewBox="0 0 620 310" role="img">
+            <defs>
+              <style>
+                .tree-root  { fill: #7c3aed; stroke: #c4b5fd; stroke-width: 2; }
+                .tree-inner { fill: #1e3a5f; stroke: #93c5fd; stroke-width: 2; }
+                .tree-leaf  { fill: #134e4a; stroke: #34d399; stroke-width: 2; }
+                .tree-edge  { stroke: #475569; stroke-width: 2; fill: none; }
+                .tree-lbl   { fill: #f1f5f9; font: bold 13px sans-serif; text-anchor: middle; dominant-baseline: middle; }
+                .tree-tag   { font: 11px sans-serif; text-anchor: middle; }
+              </style>
+            </defs>
+
+            <!-- edges -->
+            <line class="tree-edge" x1="310" y1="50"  x2="160" y2="120" />
+            <line class="tree-edge" x1="310" y1="50"  x2="460" y2="120" />
+            <line class="tree-edge" x1="160" y1="120" x2="80"  y2="200" />
+            <line class="tree-edge" x1="160" y1="120" x2="240" y2="200" />
+            <line class="tree-edge" x1="460" y1="120" x2="380" y2="200" />
+            <line class="tree-edge" x1="460" y1="120" x2="540" y2="200" />
+            <line class="tree-edge" x1="240" y1="200" x2="200" y2="275" />
+            <line class="tree-edge" x1="240" y1="200" x2="280" y2="275" />
+
+            <!-- root -->
+            <circle class="tree-root" cx="310" cy="50" r="22" />
+            <text class="tree-lbl" x="310" y="50">A</text>
+
+            <!-- internal nodes -->
+            <circle class="tree-inner" cx="160" cy="120" r="22" />
+            <text class="tree-lbl" x="160" y="120">B</text>
+            <circle class="tree-inner" cx="460" cy="120" r="22" />
+            <text class="tree-lbl" x="460" y="120">C</text>
+            <circle class="tree-inner" cx="240" cy="200" r="22" />
+            <text class="tree-lbl" x="240" y="200">D</text>
+
+            <!-- leaves -->
+            <circle class="tree-leaf" cx="80"  cy="200" r="22" />
+            <text class="tree-lbl" x="80"  y="200">E</text>
+            <circle class="tree-leaf" cx="380" cy="200" r="22" />
+            <text class="tree-lbl" x="380" y="200">F</text>
+            <circle class="tree-leaf" cx="540" cy="200" r="22" />
+            <text class="tree-lbl" x="540" y="200">G</text>
+            <circle class="tree-leaf" cx="200" cy="275" r="22" />
+            <text class="tree-lbl" x="200" y="275">H</text>
+            <circle class="tree-leaf" cx="280" cy="275" r="22" />
+            <text class="tree-lbl" x="280" y="275">I</text>
+
+            <!-- legend -->
+            <circle cx="42" cy="10" r="7" fill="#7c3aed" stroke="#c4b5fd" stroke-width="1.2" />
+            <text class="tree-tag" x="78" y="14" fill="#c4b5fd">Raiz</text>
+            <circle cx="122" cy="10" r="7" fill="#1e3a5f" stroke="#93c5fd" stroke-width="1.2" />
+            <text class="tree-tag" x="176" y="14" fill="#93c5fd">Nó interno</text>
+            <circle cx="232" cy="10" r="7" fill="#134e4a" stroke="#34d399" stroke-width="1.2" />
+            <text class="tree-tag" x="268" y="14" fill="#34d399">Folha</text>
+          </svg>
+        </div>
+      </section>
+
+      <section>
+        <h2>Árvores de decisão</h2>
+        <ul>
+          <li>Uma função que mapeia um vetor de atributos para uma saída única, a decisão</li>
+          <li>O mapeamento é feito por meio de uma série de perguntas organizadas em estrutura de árvore.</li>
+          <li><strong>Nó</strong>: um teste sobre um atributo (escore no item 4 do PHQ-9 &gt; 2?).</li>
+          <li><strong>Ramo</strong>: uma resposta possível (sim ou não).</li>
+          <li><strong>Folha</strong>: a decisão final (apresenta o transtorno ou não).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Exemplo - Rastreio de depressão com o PHQ-9</h2>
+        <div class="svg-diagram" aria-label="Árvore de decisão de exemplo rastreio de depressão com o PHQ-9">
+          <svg viewBox="0 0 760 360" role="img">
+            <defs>
+              <style>
+                .node { fill: #1e3a5f; stroke: #93c5fd; stroke-width: 1.5; }
+                .leaf-yes { fill: #134e4a; stroke: #34d399; stroke-width: 1.5; }
+                .leaf-no  { fill: #4c1d24; stroke: #fca5a5; stroke-width: 1.5; }
+                .lbl { fill: #f1f5f9; font: 14px sans-serif; text-anchor: middle; }
+                .branch-lbl { fill: #cbd5e1; font: 11px sans-serif; text-anchor: middle; }
+                .edge { stroke: #475569; stroke-width: 1.5; fill: none; }
+              </style>
+            </defs>
+            <!-- root -->
+            <rect class="node" x="300" y="20" width="160" height="46" rx="8" />
+            <text class="lbl" x="380" y="48">Item 8 &ge; 2?</text>
+
+            <!-- level 2 left -->
+            <path class="edge" d="M340,66 L180,140" />
+            <text class="branch-lbl" x="250" y="100">não</text>
+            <rect class="node" x="100" y="140" width="160" height="46" rx="8" />
+            <text class="lbl" x="180" y="168">Item 5 &ge; 1?</text>
+
+            <!-- level 2 right -->
+            <path class="edge" d="M420,66 L580,140" />
+            <text class="branch-lbl" x="510" y="100">sim</text>
+            <rect class="node" x="500" y="140" width="160" height="46" rx="8" />
+            <text class="lbl" x="580" y="168">Item 1 &lt; 2?</text>
+
+            <!-- leaves under left -->
+            <path class="edge" d="M140,186 L70,260" />
+            <text class="branch-lbl" x="95" y="220">não</text>
+            <rect class="leaf-no" x="20" y="260" width="120" height="46" rx="8" />
+            <text class="lbl" x="80" y="288">Não</text>
+
+            <path class="edge" d="M220,186 L290,260" />
+            <text class="branch-lbl" x="270" y="220">sim</text>
+            <rect class="leaf-yes" x="220" y="260" width="120" height="46" rx="8" />
+            <text class="lbl" x="280" y="288">Sim</text>
+
+            <!-- leaves under right -->
+            <path class="edge" d="M540,186 L470,260" />
+            <text class="branch-lbl" x="495" y="220">não</text>
+            <rect class="leaf-yes" x="410" y="260" width="120" height="46" rx="8" />
+            <text class="lbl" x="470" y="288">Sim</text>
+
+            <path class="edge" d="M620,186 L690,260" />
+            <text class="branch-lbl" x="670" y="220">sim</text>
+            <rect class="leaf-no" x="620" y="260" width="120" height="46" rx="8" />
+            <text class="lbl" x="680" y="288">Não</text>
+          </svg>
+        </div>
+      </section>
+
+      <section>
+        <h2>Como o computador constrói a árvore?</h2>
+        <p>Usa uma estratégia de dividir para conquistar que é gulosa</p>
+        <ol>
+          <li>Qual a pergunta que melhor separa as observações?</li>
+          <li>Essa pergunta vira a raiz da árvore e as observações são divididas de acordo com a resposta.</li>
+          <li>Repete recursivamente em cada subgrupo de observações até as folhas ficarem totalmente homogêneas (ou as perguntas possíveis acabarem).</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Como saber qual a melhor pergunta para dividir?</h2>
+        <p>O critério mais usado mede o <strong>ganho de informação</strong>: favorece perguntas que geram subgrupos mais homogêneos.</p>
+      </section>
+
+      <section>
+        <h2>Vantagens e limitações</h2>
+        <div class="two-col-text">
+          <div>
+            <h3>Vantagens</h3>
+            <ul>
+              <li>Facilmente interpretável.</li>
+              <li>Opera com atributos categóricos e numéricos.</li>
+              <li>Realiza tarefas de classificação e regressão.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Limitações</h3>
+            <ul>
+              <li>Alta variância.</li>
+              <li>Tendem ao sobreajuste se não forem podadas.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Treino, validação, teste</h2>
+        <ul>
+          <li><strong>Treino</strong> ajusta os parâmetros do hipótese.</li>
+          <li><strong>Validação</strong> compara hipóteses candidatas e ajusta hiperparâmetros.</li>
+          <li><strong>Teste</strong> gera uma estimativa de desempenho da hipótese final.</li>
+        </ul>
+        <div class="callout">
+          <p>Se você usa o conjunto de teste para selecionar as hipóteses candidatas, ele deixa de ser um teste válido.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Treino, validação, teste</h2>
+        <img class="slide-image-modern" style="max-width: 25vw;" src="img/validation-test.png" alt="Treino, validação, teste">
+        <p style="font-size:0.45em; color:#94a3b8; margin-top:0.5em;">Fonte: Russell, S. e Norvig, P. (2021). Artificial Intelligence: A Modern Approach, 4ª ed.</p>
+      </section>
+
+      <section>
+        <h2>Validação cruzada k-fold (k-fold cross-validation)</h2>
+        <p>E se eu não tenho dados suficientes para separar três conjuntos grandes?</p>
+        <ol>
+          <li>Divida os dados em <strong>k</strong> partes iguais (5 ou 10 são típicos).</li>
+          <li>Treine em <strong>k&minus;1</strong> partes; valide na que sobrou.</li>
+          <li>Repita <strong>k</strong> vezes, alterando qual parte fica de fora.</li>
+          <li>Reporte a média dos <em>k</em> resultados de validação.</li>
+        </ol>
+        <p>Quando <strong>k = n</strong> chamamos de <strong>leave-one-out cross-validation (LOOCV)</strong>.</p>
+      </section>
+
+      <section>
+        <h2>Regularização</h2>
+        <ul>
+          <li>Algumas hipóteses perdem poder de generalização conforme ficam mais complexas.</li>
+          <li>Uma opção é aplicar técnicas de <strong>regularização</strong>: uma penalização à complexidade da hipótese.</li>
+          <li>Em uma árvore de decisão podemos limitar a profundidade máxima da árvore ou o número de nós.</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>Parâmetros e hiperparâmetros</h2>
+        <div class="two-col-text">
+          <div>
+            <h3>Parâmetros</h3>
+            <ul>
+              <li>Aprendidos a partir dos dados.</li>
+              <li>São o resultado do treinamento.</li>
+              <li>Ex.: coeficientes de uma regressão; pesos de uma rede; cortes nos nós de uma árvore.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Hiperparâmetros</h3>
+            <ul>
+              <li>Configuram do processo de treinamento.</li>
+              <li>Escolhidos pelo pesquisador antes do treinamento.</li>
+              <li>Ex.: profundidade máxima da árvore; <strong>k</strong> em k-fold; taxa de aprendizado; força da regularização.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ensemble learning</h2>
+        <ul>
+          <li>Em vez de uma hipótese, treinamos várias e combinamos suas previsões (voto majoritário ou média).</li>
+          <li>Essa combinação reduz viês e variância.</li>
+          <li>Quatro famílias principais: <strong>bagging</strong>, <strong>random forest</strong>, <strong>stacking</strong>, <strong>boosting</strong>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Bagging</h2>
+        <ol>
+          <li>Sorteie, com reposição, do conjunto de dados de treinamento, <strong>k</strong> amostras do mesmo tamanho.</li>
+          <li>Treine um modelo base em cada amostra.</li>
+          <li>Para fazer predições: use voto majoritário (classificação) ou média (regressão) das previsões dos <strong>k</strong> modelos base.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Random forest</h2>
+        <ul>
+          <li>Uma extensão do bagging para árvores de decisão.</li>
+          <li>Um atributo for muito informativo tende a ser a raiz em quase todas as árvores em um ensemble de bagging.</li>
+          <li>Uma solução é considerar apenas um <strong>subconjunto aleatório</strong> dos atributos em cada divisão da árvore.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Stacking</h2>
+        <p>Em vez de combinar modelos do <em>mesmo tipo</em> (como em bagging), o stacking combina modelos de <em>tipos diferentes</em>.</p>
+        <ol>
+          <li>Treine vários modelos base nos dados de treino (uma regressão logística, uma árvore, uma SVM).</li>
+          <li>Use o conjunto de dados de validação para obter as previsões de cada modelo base.</li>
+          <li>Treine um <strong>meta-modelo</strong> que aprende a combinar as previsões dos modelos base.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Boosting</h2>
+        <ol>
+          <li>Treine o modelo 1 nos dados com pesos iguais para cada observação.</li>
+          <li>Identifique os exemplos que o modelo 1 errou; <strong>aumente o peso</strong> deles.</li>
+          <li>Treine o modelo 2 nessa amostra reponderada; ele é "forçado" a se preocupar com as observações difíceis.</li>
+          <li>Repita por k rodadas; a predição final é um <strong>voto ponderado</strong> dos k modelos.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Boosting</h2>
+        <img class="slide-image-modern" style="max-width: 25vw;" src="img/boosting.png" alt="Boosting">
+        <p style="font-size:0.45em; color:#94a3b8; margin-top:0.5em;">Fonte: Russell, S. e Norvig, P. (2021). Artificial Intelligence: A Modern Approach, 4ª ed.</p>
+      </section>
+
+      <section>
+        <h2>Gradient boosting</h2>
+        <p>Variação do boosting onde, em vez de aumentar o peso das observações erradas, o próximo modelo é treinado com foco no <strong>gradiente de erros residuais</strong> produzidos por modelos anteriores.</p>
+      </section>
+
+      <section>
+        <h2>Deep learning</h2>
+        <ul>
+          <li>Família de técnicas que usam circuitos algébricos com muitos níveis e cujas conexões têm pesos ajustáveis.</li>
+          <li>Inspiradas em modelos que buscavam reproduzir o funcionamento de neurônios biológicos; redes neurais artificiais.</li>
+          <li>Lida muito bem com dados de alta dimensionalidade e padrões complexos de interação entre variáveis.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Deep learning</h2>
+        <img class="slide-image-modern" style="max-width: 50vw;" src="img/networks.png" alt="Deep learning">
+        <p style="font-size:0.45em; color:#94a3b8; margin-top:0.5em;">Fonte: Russell, S. e Norvig, P. (2021). Artificial Intelligence: A Modern Approach, 4ª ed.</p>
+      </section>
+
+      <section>
+        <h2>Anatomia de um neurônio artificial</h2>
+        <p>Cada unidade (neurônio artificial) faz duas operações:</p>
+        <ol>
+          <li><strong>Soma ponderada das entradas</strong>: in = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + &hellip; + b</li>
+          <li><strong>Função de ativação não linear</strong>: saída = g(in)</li>
+        </ol>
+        <p>Os <strong>pesos w<sub>i</sub></strong> e <strong>bias b</strong> são os parâmetros que o treino vai ajustar.</p>
+      </section>
+
+      <section>
+        <h2>Rede feedforward</h2>
+        <img class="slide-image-modern" style="max-width: 50vw;" src="img/feedforward.png" alt="Boosting">
+        <p style="font-size:0.45em; color:#94a3b8; margin-top:0.5em;">Fonte: Russell, S. e Norvig, P. (2021). Artificial Intelligence: A Modern Approach, 4ª ed.</p>
+      </section>
+
+      <section>
+        <h2>Funções de ativação</h2>
+        <p>Não linearidades aplicadas dentro de cada unidade.</p>
+        <p>Permite a aproximação de funções quaisquer com um grau arbitrário de precisão.</p>
+        <img class="slide-image-modern" style="max-width: 35vw;" src="img/activation-functions.png" alt="Boosting">
+        <p style="font-size:0.45em; color:#94a3b8; margin-top:0.5em;">Fonte: Russell, S. e Norvig, P. (2021). Artificial Intelligence: A Modern Approach, 4ª ed.</p>
+      </section>
+
+      <section class="slide-refs">
+        <h2>Referências</h2>
+        <ul>
+          <li>Russel, S., & Norvig, P. (2021). Artificial intelligence: A Modern approach (4th ed.). Prentice Hall.‌</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>
