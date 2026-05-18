@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transtornos da personalidade — Grupos B e C</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 30vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-period-domains h2 {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-period-domains h3 {
+      margin: 0.45em 0 0.12em;
+      font-size: 0.88em;
+    }
+
+    .reveal .slide-period-domains li {
+      font-size: 0.78em;
+      line-height: 1.42;
+      margin-bottom: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+    .reveal .slide-criteria ol,
+    .reveal .slide-criteria p {
+      font-size: 0.72em;
+      line-height: 1.4;
+    }
+    .reveal .slide-criteria ol li {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-criteria .criteria-note {
+      font-size: 0.68em;
+      color: #94a3b8;
+      margin-top: 0.5em;
+    }
+
+    .reveal .slide-section h1 {
+      font-size: 2.2em;
+      border-bottom: none;
+    }
+
+    .reveal .slide-section h2 {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Transtornos da personalidade</h1>
+        <h2>Grupos B e C</h2>
+      </section>
+
+      <section>
+        <h2>Objetivos da aula</h2>
+        <ul>
+          <li>Reconhecer as características dos transtornos de personalidade dos clusters B e C.</li>
+          <li>Relacionar os critérios diagnósticos para cada transtorno.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Grupo B</h2>
+        <p>Dramáticos, emotivos ou erráticos</p>
+        <ul>
+          <li>Transtorno da personalidade <strong>antissocial</strong></li>
+          <li>Transtorno da personalidade <strong>borderline</strong></li>
+          <li>Transtorno da personalidade <strong>histriônica</strong></li>
+          <li>Transtorno da personalidade <strong>narcisista</strong></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade antissocial</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade antissocial - Critérios diagnósticos</h2>
+        <p><strong>Critério A.</strong> Um padrão difuso de desconsideração e violação dos direitos das outras pessoas que ocorre desde os 15 anos de idade, conforme indicado por três (ou mais) dos seguintes:</p>
+        <ol>
+          <li>Fracasso em ajustar-se às normas sociais relativas a comportamentos legais, conforme indicado pela repetição de atos que constituem motivos de detenção.</li>
+          <li>Tendência à falsidade, conforme indicado por mentiras repetidas, uso de nomes falsos ou de trapaça para ganho ou prazer pessoal</li>
+          <li>Impulsividade ou fracasso em fazer planos para o futuro.</li>
+          <li>Irritabilidade e agressividade, conforme indicado por repetidas lutas corporais ou agressões físicas.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade antissocial - Critérios diagnósticos</h2>
+        <ol start="5">
+          <li>Desrespeito imprudente pela segurança própria ou de outros.</li>
+          <li>Irresponsabilidade reiterada, conforme indicado por falha repetida em manter uma conduta consistente no trabalho ou honrar obrigações financeiras.</li>
+          <li>Ausência de remorso, conforme indicado pela indiferença ou racionalização em relação a ter ferido, maltratado ou roubado outras pessoas.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade antissocial - Critérios diagnósticos</h2>
+        <p><strong>Critério B.</strong> O indivíduo tem no mínimo 18 anos de idade.</p>
+        <p><strong>Critério C.</strong> Há evidências de transtorno da conduta com surgimento anterior aos 15 anos de idade.</p>
+        <p><strong>Critério D.</strong> A ocorrência de comportamento antissocial não se dá exclusivamente durante o curso de esquizofrenia ou transtorno bipolar.</p>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade antissocial - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>3,6%</strong>.</li>
+          <li>Cerca de <strong>três vezes mais comum em homens</strong>; preocupação com possível subdiagnóstico em mulheres.</li>
+          <li>Curso em geral <strong>crônico</strong>, com possível remissão parcial após os 40 anos.</li>
+          <li>Parece ter associação com contextos urbanos de vulnerabilidade socioeconômica.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade antissocial - Comorbidades</h2>
+        <ul>
+          <li>Transtornos por uso de substâncias, transtornos de ansiedade e transtornos do humor.</li>
+          <li>Transtorno de sintomas somáticos e transtorno de jogo.</li>
+          <li>Frequente sobreposição com traços de personalidade <strong>borderline, histriônica e narcisista</strong>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade borderline</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade borderline - Critérios diagnósticos</h2>
+        <p>Um padrão difuso de instabilidade das relações interpessoais, autoimagem e afetos e de impulsividade acentuada que surge no início da vida adulta e está presente em vários contextos, conforme indicado por cinco (ou mais) dos seguintes:</p>
+        <ol>
+          <li>Esforços desesperados para evitar abandono real ou imaginado.</li>
+          <li>Um padrão de relacionamentos interpessoais instáveis e intensos caracterizado pela alternância entre extremos de idealização e desvalorização.</li>
+          <li>Perturbação da identidade: instabilidade acentuada e persistente da autoimagem ou da percepção de si mesmo.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade borderline - Critérios diagnósticos</h2>
+        <ol start="4">
+          <li>Impulsividade em pelo menos duas áreas potencialmente autodestrutivas (p. ex., gastos, sexo, abuso de substância, direção imprudente, compulsão alimentar).</li>
+          <li>Recorrência de comportamento, gestos ou ameaças suicidas ou de comportamento automutilante.</li>
+          <li>Instabilidade afetiva devida a uma acentuada reatividade de humor (p.  ex., disforia episódica, irritabilidade ou ansiedade intensa com duração geralmente de poucas horas e apenas raramente de mais de alguns dias).</li>
+          <li>Sentimentos crônicos de vazio.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade borderline - Critérios diagnósticos</h2>
+        <ol start="8">
+          <li>Raiva intensa e inapropriada ou dificuldade em controlá-la (p. ex., mostras frequentes de irritação, raiva constante, brigas físicas recorrentes).</li>
+          <li>Ideação paranoide transitória associada a estresse ou sintomas dissociativos intensos.</li>
+        </ol>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade borderline - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>2,7%</strong>.</li>
+          <li>Mais frequente entre mulheres em amostras clínicas; na comunidade, prevalência semelhante entre homens e mulheres.</li>
+          <li>Início típico no início da vida adulta; sintomas podem surgir já na adolescência. Remissões sintomáticas são comuns; recuperação funcional plena é mais difícil.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade borderline - Comorbidades</h2>
+        <ul>
+          <li>Transtornos do humor, transtornos de ansiedade, transtorno por uso de substâncias.</li>
+          <li>Transtornos alimentares (bulimia, compulsão alimentar periódica), TEPT e TDAH.</li>
+          <li>Alta frequência de outros transtornos de personalidade concomitantes.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade histriônica</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade histriônica - Critérios diagnósticos</h2>
+        <p>Um padrão difuso de emocionalidade e busca de atenção em excesso que surge no início da vida adulta e está presente em vários contextos, conforme indicado por cinco (ou mais) dos seguintes:</p>
+        <ol>
+          <li>Desconforto em situações em que a pessoa não é o centro das atenções.</li>
+          <li>A interação com os outros é frequentemente caracterizada por comportamento sexualmente sedutor inadequado ou provocativo.</li>
+          <li>Exibe mudanças rápidas e expressão superficial das emoções.</li>
+          <li>Usa reiteradamente a aparência física para atrair a atenção para si.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade histriônica - Critérios diagnósticos</h2>
+        <ol start="5">
+          <li>Tem um estilo de discurso que é excessivamente impressionista e carente de detalhes.</li>
+          <li>Mostra autodramatização, teatralidade e expressão exagerada das emoções.</li>
+          <li>É sugestionável (i. e., facilmente influenciado pelos outros ou pelas circunstâncias).</li>
+          <li>Considera as relações pessoais mais íntimas do que na realidade são.</li>
+        </ol>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade histriônica - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>0,9%</strong>.</li>
+          <li>Diagnosticado com mais frequência em mulheres em contextos clínicos.</li>
+          <li>Alguns estudos indicam taxas semelhantes entre homens e mulheres.</li>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade histriônica - Outras características</h2>
+        <ul>
+          <li>Surgimento no início da vida adulta; padrão persistente em diversos contextos.</li>
+          <li>Considerar variações nas normas de expressão emocional e de relacionamento interpessoal nas culturas, gêneros e idades.</li>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade histriônica - Comorbidades</h2>
+        <ul>
+          <li>Associação com transtorno de sintomas somáticos e transtorno de sintomas neurológicos funcionais.</li>
+          <li>Sobreposição com outros transtornos de personalidade do grupo B, paranoide e dependente.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade narcisista</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade narcisista - Critérios diagnósticos</h2>
+        <p>Um padrão difuso de grandiosidade (em fantasia ou comportamento), necessidade de admiração e falta de empatia que surge no início da vida adulta e está presente em vários contextos, conforme indicado por cinco (ou mais) dos seguintes:</p>
+        <ol>
+          <li>Tem uma sensação grandiosa da própria importância (p. ex., exagera conquistas e talentos, espera ser reconhecido como superior sem que tenha as conquistas correspondentes).</li>
+          <li>É preocupado com fantasias de sucesso ilimitado, poder, brilho, beleza ou amor ideal.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade narcisista - Critérios diagnósticos</h2>
+        <ol start="3">
+          <li>Acredita ser "especial" e único e que pode ser somente compreendido por , ou associado a, outras pessoas (ou instituições) especiais ou com condição elevada.</li>
+          <li>Demanda admiração excessiva.</li>
+          <li>Apresenta um sentimento de possuir direitos (i. e., expectativas irracionais de tratamento especialmente favorável ou que estejam automaticamente de acordo com as próprias expectativas).</li>
+          <li>É explorador em relações interpessoais (i. e., tira vantagem de outros para atingir os próprios fins).</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade narcisista - Critérios diagnósticos</h2>
+        <ol start="7">
+          <li>Carece de empatia: reluta em reconhecer ou identificar-se com os sentimentos e as necessidades dos outros.</li>
+          <li>É frequentemente invejoso em relação aos outros ou acredita que os outros o invejam.</li>
+          <li>Demonstra comportamentos ou atitudes arrogantes e insolentes.</li>
+        </ol>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade narcisista - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>1,6%</strong>.</li>
+          <li>De 50% a 75% das pessoas diagnosticadas são homens.</li>
+          <li>Traços narcisistas são comuns na adolescência e nem sempre evoluem para o transtorno.</li>
+        </ul>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade narcisista - Outras características</h2>
+        <ul>
+          <li>Crises (fracasso financeiro, perda de relacionamento) podem exacerbar sintomas.</li>
+          <li>Contextos que enfatizam individualismo podem elevar traços narcisistas.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade narcisista - Comorbidades</h2>
+        <ul>
+          <li>Transtornos depressivos, anorexia nervosa e uso de substâncias (notadamente cocaína).</li>
+          <li>Associação com transtornos de personalidade do grupo B e paranoide.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Grupo C</h2>
+        <p>Ansiosos ou medrosos</p>
+        <ul>
+          <li>Transtorno da personalidade <strong>evitativa</strong></li>
+          <li>Transtorno da personalidade <strong>dependente</strong></li>
+          <li>Transtorno da personalidade <strong>obsessivo-compulsiva</strong></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade evitativa</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade evitativa - Critérios diagnósticos</h2>
+        <p>Um padrão difuso de inibição social, sentimentos de inadequação e hipersensibilidade a avaliação negativa que surge no início da vida adulta e está presente em vários contextos, conforme indicado por quatro (ou mais) dos seguintes:</p>
+        <ol>
+          <li>Evita atividades profissionais que envolvam contato interpessoal significativo por medo de crítica, desaprovação ou rejeição.</li>
+          <li>Não se dispõe a envolver-se com pessoas, a menos que tenha certeza de que será recebido de forma positiva.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade evitativa - Critérios diagnósticos</h2>
+        <ol start="3">
+          <li>Mostra-se reservado em relacionamentos íntimos devido a medo de passar vergonha ou de ser ridicularizado.</li>
+          <li>Preocupa-se com críticas ou rejeição em situações sociais.</li>
+          <li>Inibe-se em situações interpessoais novas em razão de sentimentos de inadequação.</li>
+          <li>Vê a si mesmo como socialmente incapaz, sem atrativos pessoais ou inferior aos outros.</li>
+          <li>Reluta de forma incomum em assumir riscos pessoais ou se envolver em quaisquer novas atividades, pois estas podem ser constrangedoras.</li>
+        </ol>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade evitativa - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>2,1%</strong>.</li>
+          <li>Ligeiramente mais frequente em mulheres.</li>
+          <li>Timidez na infância é precursor comum; o transtorno pode intensificar-se na adolescência e vida adulta jovem.</li>
+          <li>Possível remissão parcial com o envelhecimento.</li>
+          <li>Grupos culturais diferem quanto ao que consideram retraimento apropriado; evitação após imigração ou constrangimento social merece avaliação contextual.</li>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade evitativa - Comorbidades</h2>
+        <ul>
+          <li>Transtornos de ansiedade (especialmente ansiedade social), transtornos depressivos e transtorno por uso de substâncias.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade dependente</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade dependente - Critérios diagnósticos</h2>
+        <p>Uma necessidade difusa e excessiva de ser cuidado que leva a comportamento de submissão e apego que surge no início da vida adulta e está presente em vários contextos, conforme indicado por cinco (ou mais) dos seguintes:</p>
+        <ol>
+          <li>Tem dificuldades em tomar decisões cotidianas sem uma quantidade excessiva de conselhos e reasseguramento de outros.</li>
+          <li>Precisa que outros assumam responsabilidade pela maior parte das principais áreas de sua vida.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade dependente - Critérios diagnósticos</h2>
+        <ol start="3">
+          <li>Sente-se desconfortável ou desamparado quando sozinho devido a temores exagerados de ser incapaz de cuidar de si mesmo.</li>
+          <li>Busca com urgência outro relacionamento como fonte de cuidado e amparo logo após o término de um relacionamento íntimo.</li>
+          <li>Tem preocupações irreais com medos de ser abandonado à própria sorte.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade dependente - Critérios diagnósticos</h2>
+        <ol start="6">
+          <li>Sente-se desconfortável ou desamparado quando sozinho devido a temores exagerados de ser incapaz de cuidar de si mesmo.</li>
+          <li>Busca com urgência outro relacionamento como fonte de cuidado e amparo logo após o término de um relacionamento íntimo.</li>
+          <li>Tem preocupações irreais com medos de ser abandonado à própria sorte.</li>
+        </ol>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade dependente - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>0,4%</strong>.</li>
+          <li>Mais frequentemente diagnosticado em mulheres.</li>
+          <li>Normas culturais podem encorajar ou desencorajar dependência de modo diferenciado entre homens e mulheres.</li>
+          <li>Diagnóstico com muita cautela em crianças e adolescentes, nos quais dependência pode ser esperada no desenvolvimento.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade dependente - Comorbidades</h2>
+        <ul>
+          <li>Maior risco de transtornos depressivos, de ansiedade e de adaptação.</li>
+          <li>Coocorrência frequente com transtornos da personalidade borderline, evitativa e histriônica.</li>
+          <li>Transtorno de ansiedade de separação na infância/adolescência podem predispor ao transtorno.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade obsessivo-compulsiva</h2>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade obsessivo-compulsiva - Critérios diagnósticos</h2>
+        <p>Um padrão difuso de preocupação com ordem, perfeccionismo e controle mental e interpessoal à custa de flexibilidade, abertura e eficiência que surge no início da vida adulta e está presente em vários contextos, conforme indicado por quatro (ou mais) dos seguintes:</p>
+        <ol>
+          <li>É tão preocupado com detalhes, regras, listas, ordem, organização ou horários a ponto de o objetivo principal da atividade ser perdido.</li>
+          <li>Demonstra perfeccionismo que interfere na conclusão de tarefas (p. ex., não consegue completar um projeto porque seus padrões próprios demasiadamente rígidos não são atingidos).</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade obsessivo-compulsiva - Critérios diagnósticos</h2>
+        <ol start="3">
+          <li>É excessivamente dedicado ao trabalho e à produtividade em detrimento de atividades de lazer e amizades (não explicado por uma óbvia necessidade financeira).</li>
+          <li>É excessivamente consciencioso, escrupuloso e inflexível quanto a assuntos de moralidade, ética ou valores (não explicado por identificação cultural ou religiosa).</li>
+          <li>É incapaz de descartar objetos usados ou sem valor mesmo quando não têm valor sentimental.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Transtorno da personalidade obsessivo-compulsiva - Critérios diagnósticos</h2>
+        <ol start="6">
+          <li>Reluta em delegar tarefas ou trabalhar com outras pessoas a menos que elas se submetam à sua forma exata de fazer as coisas.</li>
+          <li>Adota um estilo miserável de gastos em relação a si e a outros; o dinheiro é visto como algo a ser acumulado para futuras catástrofes.</li>
+          <li>Exibe rigidez e teimosia.</li>
+        </ol>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Transtorno da personalidade obsessivo-compulsiva - Outras características</h2>
+        <ul>
+          <li>Prevalência de cerca de <strong>4,7%</strong>.</li>
+          <li>Diagnóstico em proporções semelhantes entre homens e mulheres.</li>
+          <li>Não incluir hábitos ou normas culturalmente aceitos (trabalho, religião, regras de grupo) como critério diagnóstico.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Transtorno da personalidade obsessivo-compulsiva - Comorbidades</h2>
+        <ul>
+          <li>Transtornos de ansiedade e TOC tem maiores chances de ter um transtorno de personalidade obsessivo-compulsiva.</li>
+          <li>Transtornos do humor e alimentares.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Síntese</h2>
+        <ul>
+          <li><strong>Grupo B:</strong> instabilidade emocional, impulsividade, grandiosidade ou indiferença pelos direitos alheios.</li>
+          <li><strong>Grupo C:</strong> medo, evitação, dependência ou rigidez e controle.</li>
+        </ul>
+      </section>
+
+      <section class="slide-refs">
+        <h2>Referências</h2>
+        <ul>
+          <li>American Psychiatric Association. <em>Diagnostic and Statistical Manual of Mental Disorders</em>, 5th ed., text revision (DSM-5-TR). Arlington, VA: American Psychiatric Association, 2022.</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({ hash: true });
+  </script>
+</body>
+</html>
