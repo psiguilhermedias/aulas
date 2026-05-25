@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intenção de evasão em universitários com TDAH</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 25vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.62em;
+      line-height: 1.4;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .reveal .slide-refs li {
+      padding-left: 2em;
+      text-indent: -2em;
+      margin-bottom: 0.55em;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+    .reveal pre {
+      position: relative;
+      margin: 0.75em 0 0;
+      padding: 0.65em 2.35em 0.65em 0.85em;
+      text-align: left;
+      max-width: 100%;
+      border-radius: 8px;
+      background: #020617;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.8);
+    }
+
+    .reveal pre code {
+      display: block;
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      font-size: 1.2em;
+      line-height: 1.45;
+      color: #e2e8f0;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .reveal a.code-run-link {
+      position: absolute;
+      top: 50%;
+      right: 0.45em;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.85em;
+      height: 1.85em;
+      margin: 0;
+      padding: 0;
+      border-bottom: none;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.75);
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35);
+      opacity: 0.9;
+      color: var(--r-link-color);
+    }
+
+    .reveal a.code-run-link:hover {
+      border-bottom: none;
+      opacity: 1;
+      color: var(--r-link-color-hover);
+      background: rgba(30, 58, 95, 0.85);
+    }
+
+    .reveal a.code-run-link .code-run-link__icon {
+      width: 1.05em;
+      height: 1.05em;
+      flex-shrink: 0;
+    }
+
+    .reveal .callout {
+      margin-top: 0.9em;
+      padding: 0.7em 0.95em;
+      border-left: 4px solid #a78bfa;
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.78em;
+      line-height: 1.45;
+      box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.35);
+    }
+
+    .reveal .callout strong {
+      color: #c4b5fd;
+    }
+
+    .reveal .callout p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .reveal .compare-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.55em;
+      line-height: 1.4;
+    }
+
+    .reveal .compare-table th,
+    .reveal .compare-table td {
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.45em 0.6em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .compare-table th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .reveal .svg-diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.6em auto;
+    }
+
+    .reveal .svg-diagram svg {
+      max-width: 100%;
+      max-height: 42vh;
+      height: auto;
+    }
+
+    .reveal .diagram-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.8em;
+    }
+
+    .reveal .diagram-row figure {
+      flex: 1;
+      margin: 0;
+      text-align: center;
+    }
+
+    .reveal .diagram-row figcaption {
+      margin-top: 0.4em;
+      font-size: 0.65em;
+      color: #cbd5e1;
+    }
+
+    .reveal .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      margin: 0.6em 0;
+    }
+
+    .reveal .tag-list span {
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.18);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #bfdbfe;
+      font-size: 0.7em;
+      font-weight: 500;
+    }
+
+    .reveal .two-col-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .reveal .three-col-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .reveal .three-col-text h3 {
+      color: #a5b4fc;
+      font-size: 0.85em;
+      margin: 0 0 0.35em;
+    }
+
+    .reveal .three-col-text p,
+    .reveal .three-col-text li {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .three-col-text ul {
+      margin-top: 0.2em;
+    }
+
+    .reveal .two-col-text h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0 0 0.35em;
+    }
+
+    .reveal .two-col-text ul {
+      margin-top: 0.2em;
+    }
+
+    .reveal .two-col-text li {
+      font-size: 0.78em;
+      line-height: 1.45;
+    }
+
+    .reveal .equation-box {
+      margin: 0.6em 0;
+      padding: 0.6em 0.85em;
+      background: rgba(2, 6, 23, 0.7);
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      text-align: center;
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      font-size: 0.85em;
+      color: #e2e8f0;
+    }
+
+    .reveal .key-points {
+      margin-top: 0.5em;
+      padding: 0.65em 0.9em;
+      background: rgba(30, 58, 95, 0.4);
+      border-radius: 8px;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      font-size: 0.78em;
+      line-height: 1.45;
+    }
+
+    .reveal .key-points strong {
+      color: #bae6fd;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1 style="font-size:1.25em; line-height:1.25;">O papel da depressão e das estratégias de enfrentamento na intenção de evasão em estudantes universitários com TDAH</h1>
+        <p>Guilherme Augusto Dias</p>
+        <p>Orientadora: Prof.ª Dr.ª Ana Cristina Garcia Dias</p>
+      </section>
+
+      <section>
+        <h2>TDAH em universitários</h2>
+        <ul>
+          <li>Prevalência estimada entre <strong>2% e 8%</strong> (DuPaul et al., 2009); cerca de <strong>15,9%</strong> com sintomas clinicamente significativos (WMH surveys).</li>
+          <li>Piores desfechos: desempenho acadêmico, evasão, saúde mental e relacionamentos (Green &amp; Rabiner, 2012; DuPaul et al., 2021).</li>
+          <li>Alta comorbidade psiquiátrica — ex.: <strong>55%</strong> vs <strong>11,2%</strong> no grupo de comparação (Anastopoulos et al., 2018).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Intenção de evasão</h2>
+        <ul>
+          <li><strong>Evasão universitária:</strong> desligamento do curso, instituição ou do ensino superior sem diplomação (Coimbra et al., 2021).</li>
+          <li>Taxa média anual de evasão no ensino superior brasileiro: cerca de <strong>22%</strong> (2000–2005; Silva Filho et al., 2007).</li>
+          <li>Modelos clássicos enfatizam fatores psicossociais e acadêmicos, mas pouco a saúde mental (Robbins et al., 2004).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>TDAH, depressão e evasão</h2>
+        <ul>
+          <li>Universitários com TDAH têm de <strong>4,69 a 8,4 vezes</strong> mais chances de sintomas depressivos moderados ou severos (Anastopoulos et al., 2018; Kwak et al., 2015; Shen et al., 2018).</li>
+          <li>Sintomas depressivos associados a menor desempenho e maior risco de abandono (Eisenberg et al., 2009).</li>
+          <li>Evidência de mediação TDAH → depressão → intenção de evasão (Müller et al., 2024).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>TDAH, estratégias de enfrentamento e evasão</h2>
+        <ul>
+          <li>Em universitários com alta sintomatologia de TDAH as estratégias focadas no problema associam-se a hábitos de estudo e gestão do tempo; as focadas na emoção, a menor bem-estar e piores relações com pares e professores (Carlotto et al., 2015; Oliveira &amp; Dias, 2017).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Objetivos</h2>
+        <p><strong>Objetivo geral:</strong> verificar a adequação de um modelo em que a sintomatologia depressiva medeia a relação entre sintomatologia do TDAH e intenção de evasão; avaliar o papel das estratégias de enfrentamento.</p>
+        <ul>
+          <li>Testar efeito direto do TDAH sobre intenção de evasão.</li>
+          <li>Testar mediação parcial pela sintomatologia depressiva.</li>
+          <li>Testar moderação das estratégias de enfrentamento nas relações do modelo.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo teórico</h2>
+        <div class="svg-diagram" aria-label="Modelo teórico: TDAH, depressão, intenção de evasão e moderadores de enfrentamento">
+          <svg viewBox="0 0 720 300" role="img">
+            <defs>
+              <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#93c5fd" />
+              </marker>
+              <style>
+                .path-box { fill: #1e3a5f; stroke: #93c5fd; stroke-width: 1.5; }
+                .path-mod { fill: #312e81; stroke: #a78bfa; stroke-width: 1.5; stroke-dasharray: 4 3; }
+                .path-edge { stroke: #93c5fd; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                .path-edge-mod { stroke: #c4b5fd; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; }
+                .path-lbl { fill: #f1f5f9; font: 12px sans-serif; text-anchor: middle; }
+                .path-sub { fill: #94a3b8; font: 10px sans-serif; text-anchor: middle; }
+                .path-tag { fill: #bae6fd; font: 10px sans-serif; text-anchor: middle; }
+              </style>
+            </defs>
+            <rect class="path-box" x="30" y="95" width="130" height="52" rx="8" />
+            <text class="path-lbl" x="95" y="118">TDAH</text>
+            <text class="path-sub" x="95" y="136">ASRS-18</text>
+            <rect class="path-box" x="295" y="35" width="130" height="52" rx="8" />
+            <text class="path-lbl" x="360" y="58">Depressão</text>
+            <text class="path-sub" x="360" y="76">PHQ-9</text>
+            <rect class="path-box" x="560" y="95" width="130" height="52" rx="8" />
+            <text class="path-lbl" x="625" y="118">Intenção de evasão</text>
+            <text class="path-sub" x="625" y="136">EAJES</text>
+            <rect class="path-mod" x="120" y="210" width="200" height="44" rx="8" />
+            <text class="path-lbl" x="220" y="230" font-size="11">Estratégias de enfrentamento</text>
+            <text class="path-sub" x="220" y="246">EMEP</text>
+            <path class="path-edge" d="M160,121 L555,121" />
+            <path class="path-edge" d="M160,100 L295,70" />
+            <path class="path-edge" d="M425,70 L555,100" />
+            <path class="path-edge-mod" d="M220,210 L220,88" />
+            <path class="path-edge-mod" d="M220,210 L360,122" />
+          </svg>
+        </div>
+      </section>
+
+      <section>
+        <h2>Hipóteses</h2>
+        <ul style="font-size:0.78em;">
+          <li><strong>H1:</strong> A sintomatologia do TDAH prediz diretamente os níveis de intenção de evasão entre estudantes universitários.</li>
+          <li><strong>H2:</strong> Estratégias de enfrentamento focadas no problema e na busca por apoio social <em>atenuam</em> a relação TDAH → evasão.</li>
+          <li><strong>H3:</strong> Estratégias de enfrentamento focadas na emoção <em>acentuam</em> a relação TDAH → evasão.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hipóteses</h2>
+        <ul style="font-size:0.78em;">
+          <li><strong>H4:</strong> Sintomatologia depressiva medeia parcialmente a relação TDAH → intenção de evasão.</li>
+          <li><strong>H5:</strong> Estratégias de enfrentamento focadas no problema e na busca por apoio social <em>atenuam</em> a relação TDAH → depressão.</li>
+          <li><strong>H6:</strong> Estratégias de enfrentamento focadas na emoção <em>acentuam</em> a relação TDAH → depressão.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Participantes</h2>
+        <p><strong>Delineamento:</strong> transversal correlacional.</p>
+        <ul>
+          <li><strong>N = 562</strong> (Fritz &amp; MacKinnon, 2007).</li>
+          <li>Estudantes universitários brasileiros, ≥18 anos, graduação presencial, todas as regiões do país; instituições públicas ou privadas.</li>
+          <li><strong>Exclusão:</strong> diagnóstico de transtorno específico de aprendizagem por profissional de saúde mental.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Instrumentos</h2>
+        <ul style="font-size:0.78em;">
+          <li><strong>Questionário sociodemográfico</strong> - idade, gênero, nível socioeconômico, curso em andamento, histórico de diagnóstico/tratamento e evasão.</li>
+          <li><strong>ASRS-18</strong>: sintomas de TDAH; subescalas desatenção e hiperatividade/impulsividade.</li>
+          <li><strong>EAJES:</strong> subescala de intenção de abandono (e percepção de dificuldade acadêmica).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Instrumentos</h2>
+        <ul style="font-size:0.78em;">
+          <li><strong>EMEP</strong>: estratégias focadas no problema, na emoção, busca de apoio social e práticas religiosas/fantasia.</li>
+          <li><strong>PHQ-9</strong>: rastreamento e severidade de sintomas depressivos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Procedimentos</h2>
+        <ul style="font-size:0.78em;">
+          <li>Recrutamento por peça digital em grupos de universitários e de TDAH nas redes sociais.</li>
+          <li>Coleta on-line via <strong>LimeSurvey</strong> (UFRGS); <strong>TCLE</strong> antes do questionário.</li>
+          <li>Ordem: sociodemográfico → ASRS-18 → EAJES → PHQ-9 → EMEP.</li>
+          <li>Submissão ao <strong>CEP-IPSSCH/UFRGS</strong>; coleta somente após aprovação.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Análise de dados</h2>
+        <ul>
+          <li>Estatísticas descritivas (médias, desvios-padrão) e matriz de correlações de Pearson.</li>
+          <li>Modelo de mediação segundo o critério de Baron e Kenny (1986).</li>
+          <li>Índices de ajuste: <strong>TLI</strong>, <strong>CFI</strong> e <strong>RMSEA</strong>.</li>
+        </ul>
+      </section>
+
+      <section class="slide-refs">
+        <h2>Obrigado</h2>
+        <p style="font-size:0.85em; margin-bottom:0.8em;">Perguntas?</p>
+      </section>
+
+      <section class="slide-refs">
+        <h3 style="font-size:0.9em; color:#a5b4fc; margin-bottom:0.35em;">Referências</h3>
+        <ul>
+          <li>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.). American Psychiatric Association Publishing. https://doi.org/10.1176/appi.books.9780890425787</li>
+          <li>Anastopoulos, A. D., DuPaul, G. J., Weyandt, L. L., Morrissey-Kane, E., Sommer, J. L., Rhoads, L. H., Murphy, K. R., Gormley, M. J., &amp; Gudmundsdottir, B. G. (2018). Rates and patterns of comorbidity among first-year college students with ADHD. <em>Journal of Clinical Child &amp; Adolescent Psychology</em>, <em>47</em>(2), 236–247. https://doi.org/10.1080/15374416.2015.1105137</li>
+          <li>Baron, R. M., &amp; Kenny, D. A. (1986). The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. <em>Journal of Personality and Social Psychology</em>, <em>51</em>(6), 1173–1182. https://doi.org/10.1037/0022-3514.51.6.1173</li>
+          <li>Eisenberg, D., Golberstein, E., &amp; Hunt, J. B. (2009). Mental health and academic success in college. <em>The B.E. Journal of Economic Analysis &amp; Policy</em>, <em>9</em>(1), Article 2191. https://doi.org/10.2202/1935-1682.2191</li>
+        </ul>
+      </section>
+
+      <section class="slide-refs">
+        <h3 style="font-size:0.9em; color:#a5b4fc; margin-bottom:0.35em;">Referências</h3>
+        <ul>
+          <li>Fritz, M. S., &amp; MacKinnon, D. P. (2007). Required sample size to detect the mediated effect. <em>Psychological Science</em>, <em>18</em>(3), 233–239. https://doi.org/10.1111/j.1467-9280.2007.01882.x</li>
+          <li>Müller, V., Mellor, D., &amp; Pikó, B. F. (2024). Dropout intention among university students with ADHD symptoms: Exploring a path model for the role of self-efficacy, resilience, and depression. <em>Education Sciences</em>, <em>14</em>(10), Article 1083. https://doi.org/10.3390/educsci14101083</li>
+          <li>Robbins, S. B., Lauver, K., Le, H., Davis, D., Langley, R., &amp; Carlstrom, A. (2004). Do psychosocial and study skill factors predict college outcomes? A meta-analysis. <em>Psychological Bulletin</em>, <em>130</em>(2), 261–288. https://doi.org/10.1037/0033-2909.130.2.261</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>
