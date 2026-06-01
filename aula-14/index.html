@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transtorno Depressivo Maior</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 30vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-period-domains h2 {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-period-domains h3 {
+      margin: 0.45em 0 0.12em;
+      font-size: 0.88em;
+    }
+
+    .reveal .slide-period-domains li {
+      font-size: 0.78em;
+      line-height: 1.42;
+      margin-bottom: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+    .reveal .slide-criteria ol,
+    .reveal .slide-criteria p {
+      font-size: 0.72em;
+      line-height: 1.4;
+    }
+    .reveal .slide-criteria ol li {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-criteria .criteria-note {
+      font-size: 0.68em;
+      color: #94a3b8;
+      margin-top: 0.5em;
+    }
+
+    .reveal .slide-section h1 {
+      font-size: 2.2em;
+      border-bottom: none;
+    }
+
+    .reveal .slide-section h2 {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Transtorno Depressivo Maior</h1>
+        <h2>Características, consequências e tratamento</h2>
+      </section>
+
+      <section>
+        <h2>Objetivos da aula</h2>
+        <ul>
+          <li>Definir transtorno depressivo maior e reconhecer suas principais características.</li>
+          <li>Reconhecer o impacto do transtorno na qualidade de vida.</li>
+          <li>Reconhecer as principais opções de tratamento para o transtorno.</li>
+        </ul>
+      </section>
+
+      <section class="slide-section">
+        <h2>O que é transtorno depressivo maior?</h2>
+      </section>
+
+      <section>
+        <h2>Transtorno depressivo maior</h2>
+        <ul>
+          <li>Transtorno de mental caracterizado por <strong>humor deprimido</strong> e/ou <strong>perda de interesse ou prazer</strong>.</li>
+          <li>Vem acompanhado de sintomas <strong>físicos</strong> (sono, apetite, fadiga, dores) e <strong>cognitivos</strong> (atenção, memória, tomada de decisão).</li>
+        </ul>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Critérios diagnósticos (DSM-5-TR)</h2>
+        <p><strong>Critério A.</strong> Cinco (ou mais) dos seguintes sintomas estiveram presentes durante o mesmo período de duas semanas e representam uma mudança no funcionamento anterior; pelo menos um dos sintomas é (1) humor deprimido ou (2) perda de interesse ou prazer.</p>
+        <ol>
+          <li>Humor deprimido na maior parte do dia, quase todos os dias, conforme indicado por relato subjetivo ou por observação feita por outras pessoas.</li>
+          <li>Acentuada diminuição do interesse ou prazer em todas ou quase todas as atividades na maior parte do dia, quase todos os dias (conforme indicado por relato subjetivo ou por observação feita por outras pessoas).</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Critérios diagnósticos (DSM-5-TR)</h2>
+        <ol start="3">
+          <li>Perda ou ganho significativo de peso sem estar fazendo dieta, ou redução ou aumento do apetite quase todos os dias.</li>
+          <li>Insônia ou hipersonia quase todos os dias.</li>
+          <li>Agitação ou retardo psicomotor quase todos os dias (observáveis por outras pessoas; não meramente sensações subjetivas de inquietação ou de estar mais lento).</li>
+          <li>Fadiga ou perda de energia quase todos os dias.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Critérios diagnósticos (DSM-5-TR)</h2>
+        <ol start="7">
+          <li>Sentimentos de inutilidade ou culpa excessiva ou inapropriada (que podem ser delirantes) quase todos os dias (não meramente autorrecriminação ou culpa por estar doente).</li>
+          <li>Capacidade diminuída para pensar ou se concentrar , ou indecisão, quase todos os dias (por relato subjetivo ou observação feita por outras pessoas).</li>
+          <li>Pensamentos recorrentes de morte (não somente medo de morrer), ideação suicida recorrente, sem um plano específico, um plano específico de suicídio ou tentativa de suicídio.</li>
+        </ol>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Critérios diagnósticos (DSM-5-TR)</h2>
+        <p><strong>Critério B.</strong> Os sintomas causam sofrimento clinicamente significativo ou prejuízo no funcionamento social, profissional ou em outras áreas importantes da vida do indivíduo.</p>
+        <p><strong>Critério C.</strong> O episódio não é atribuível aos efeitos fisiológicos de uma substância ou a outra condição médica.</p>
+      </section>
+
+      <section class="slide-criteria">
+        <h2>Critérios diagnósticos (DSM-5-TR)</h2>
+        <p><strong>Critério D.</strong> Pelo menos um episódio depressivo maior não é mais bem explicado pelo transtorno esquizoafetivo e não se sobrepõe a esquizofrenia, transtorno esquizofreniforme, transtorno delirante ou outro transtorno do espectro da esquizofrenia e outros transtornos psicóticos especificado ou não especificado.</p>
+        <p><strong>Critério E.</strong> Nunca houve um episódio maníaco ou um episódio hipomaníaco.</p>
+      </section>
+
+      <section class="slide-section">
+        <h2>O que causa o transtorno depressivo maior?</h2>
+      </section>
+
+      <section>
+        <h2>Um quadro multifatorial</h2>
+        <ul>
+          <li>Não há uma "causa única" para o transtorno depressivo maior.</li>
+          <li>O transtorno resulta da combinação de fatores <strong>genéticos</strong>, <strong>biológicos</strong>, <strong>psicológicos</strong> e <strong>ambientais</strong>.</li>
+          <li>Modelos atuais enfatizam a interação entre vulnerabilidade da pessoa e fatores ambientais.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo vulnerabilidade–estresse</h2>
+        <ul>
+          <li>Pessoas diferem em sua <strong>vulnerabilidade</strong> (genética, biológica, psicológica) para desenvolver depressão.</li>
+          <li>Essa vulnerabilidade interage com <strong>eventos estressores</strong> (conflitos, perdas, violência).</li>
+          <li>Quanto maior a vulnerabilidade, <strong>menos intenso</strong> precisa ser o estressor para que o quadro apareça.</li>
+          <li>A mesma situação estressora pode levar a desfechos diferentes em pessoas distintas.</li>
+        </ul>
+      </section>
+
+      <section class="slide-table-milestones">
+        <h2>Fatores protetores e de risco</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Domínio</th>
+              <th>Fatores de proteção</th>
+              <th>Fatores de risco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Demográfico</td>
+              <td>Sexo masculino, idade mais avançada, maior nível socioeconômico</td>
+              <td>Sexo feminino, adolescência e início da vida adulta, baixa renda</td>
+            </tr>
+            <tr>
+              <td>Psicológico</td>
+              <td>Traços de extroversão, boa autoestima, lócus de controle interno e senso de maestria</td>
+              <td>Traços de neuroticismo, ruminação e lócus de controle externo</td>
+            </tr>
+            <tr>
+              <td>Social/comunitário</td>
+              <td>Boas relações familiares, apoio social, ambientes seguros</td>
+              <td>Trauma na infância, violência, bullying, contextos inseguros</td>
+            </tr>
+            <tr>
+              <td>Comportamental e saúde</td>
+              <td>Atividade física, sono adequado, alimentação saudável, acesso a tratamento</td>
+              <td>Sedentarismo, sono irregular, uso de substâncias, doenças crônicas sem cuidado</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+
+      <section class="slide-section">
+        <h2>Quão frequente é o transtorno depressivo maior?</h2>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Prevalência</h2>
+        <h3>Ao longo da vida</h3>
+        <ul>
+          <li>Estudos indicam prevalência ao longo da vida de pelo menos <strong>10%</strong> na população geral.</li>
+          <li>Estudos prospectivos sugerem que a prevalência verdadeira pode ser ainda maior.</li>
+        </ul>
+        <h3>Em janelas de tempo menores</h3>
+        <ul>
+          <li>Prevalência em <strong>12 meses</strong> em torno de <strong>4–5%</strong> globalmente.</li>
+        </ul>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Diferenças entre países</h2>
+        <ul>
+          <li>A prevalência de transtorno depressivo maior apresenta <strong>variações modestas</strong> entre países de alta e de baixa renda.</li>
+          <li>Diferenças observadas podem refletir:
+            <ul>
+              <li>Variações reais na exposição a fatores de de risco.</li>
+              <li>Acesso desigual a serviços de saúde mental e diagnóstico.</li>
+              <li>Fatores culturais que influenciam o diagnóstico do transtorno.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Diferenças entre gêneros</h2>
+        <ul>
+          <li>A prevalência de transtorno depressivo maior é <strong>cerca de duas vezes maior em mulheres</strong> do que em homens.</li>
+          <li>Diferença atribuída a combinações de fatores:
+            <ul>
+              <li>Biológicos (hormonais, genéticos, desenvolvimento).</li>
+              <li>Psicológicos (padrões de resposta emocional, ruminação).</li>
+              <li>Sociais (papéis de gênero, desigualdades, violência).</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="slide-section">
+        <h2>Quando começa e termina o transtorno depressivo maior?</h2>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Curso</h2>
+        <ul>
+          <li>Início típico em torno dos <strong>20–25 anos</strong>, mas pode ocorrer em outras fases da vida.</li>
+          <li>Episódios depressivos costumam durar <strong>2–6 meses</strong>, com cercade 70% dos casos entrando em remissão.</li>
+          <li>Em serviços de saúde mental, é frequente a presença de quadros <strong>persistentes</strong> (duração &gt; 12 meses) e recorrentes.</li>
+        </ul>
+      </section>
+
+      <section class="slide-section">
+        <h2>Quais os impactos do transtorno depressivo maior?</h2>
+      </section>
+
+      <section>
+        <h2>Qualidade de vida no transtorno depressivo maior</h2>
+        <ul>
+          <li>O transtorno afeta o funcionamento cotidiano da pessoa, criando impacto em diversas áreas da vida.</li>
+          <li>Há maior ocorrência de comorbidades físicas e psiquiátricas.</li>
+          <li>Há impacto nos estudos, no trabalho e nas relações interpessoais.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Consequências</h2>
+        <ul>
+          <li><strong>Comorbidades físicas</strong>: maior risco de doenças cardiovasculares, obesidade e diabetes tipo 2.</li>
+          <li><strong>Comorbidades psiquiátricas</strong>: maior risco de transtornos de ansiedade e transtornos por uso de substância.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Consequências</h2>
+        <ul>
+          <li><strong>Impacto educacional</strong>: pior desempenho acadêmico e maior risco de evasão.</li>
+          <li><strong>Impacto ocupacional</strong>: perda de produtividade, absenteísmo e afastamentos do trabalho.</li>
+          <li><strong>Impacto nas relações</strong>: conflitos familiares, isolamento social e sofrimento para a rede de apoio.</li>
+        </ul>
+      </section>
+
+      <section class="slide-period-domains">
+        <h2>Morte prematura</h2>
+        <ul>
+          <li>Morte prematura por comorbidades médicas.</li>
+          <li>Maior risco de suicídio.</li>
+            <ul>
+              <li>Risco 20 vezes maior em comparação a pessoas sem o transtorno.</li>
+              <li>Risco aumentado para casos com características psicóticas.</li>
+              <li>Outros fatores que aumentam o risco são ser homem, apresentar sintomas severos e fazer uso de substâncias.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="slide-section">
+        <h2>Como previnir e tratar o transtorno depressivo maior?</h2>
+      </section>
+
+      <section>
+        <h2>Prevenção</h2>
+        <ul>
+          <li><strong>Universal</strong> – voltado a toda a população (por exemplo, programas escolares).</li>
+          <li><strong>Seletiva</strong> –  voltado a grupos de maior risco (filhos de pais com depressão, pessoas expostas a traumas).</li>
+          <li><strong>Recomendada</strong> – voltado a pessoas com sintomas subclínicos.</li>
+        </ul>
+        <p>Majoritariamente intervenções psicológicas de base cognitivo-comportamental.</p>
+      </section>
+
+      <section>
+        <h2>Quatro pilares do tratamento do transtorno depressivo maior</h2>
+        <ul>
+          <li><strong>Intervenções no estilo de vida</strong> – atividade física, sono, alimentação.</li>
+          <li><strong>Psicoterapia</strong> – intervenções estruturadas que auxiliam a pessoa a compreender e modificar pensamentos, emoções e comportamentos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Quatro pilares do tratamento do transtorno depressivo maior</h2>
+        <ul>
+          <li><strong>Farmacoterapia</strong> – antidepressivos e, em alguns casos, outros medicamentos de apoio.</li>
+          <li><strong>Estimulação cerebral</strong> — especialmente em casos graves ou resistentes (ECT, estimulação magnética transcraniana).</li>
+        </ul>
+        <p>Com frequência, a combinação de abordagens traz melhores resultados do que apenas uma intervenção isolada.</p>
+      </section>
+
+      <section>
+        <h2>Perspectivas futuras</h2>
+        <ul>
+          <li>Fármacos com mecanismos inovadores (inibidores de acetilcolina).</li>
+          <li>Aplicativos de monitoramento de humor e sono.</li>
+          <li>Psicoterapia on-line e programas autoguiados.</li>
+          <li>No longo prazo, personalizar o cuidado, identificando subtipos de depressão e combinando dados clínicos e biomarcadores para orientar o tratamento.</li>
+        </ul>
+      </section>
+
+      <section class="slide-refs">
+        <h2>Referências</h2>
+        <ul>
+          <li>Marx, W., Penninx, B. W. J. H., Solmi, M., Furukawa, T. A., Firth, J., Carvalho, A. F., &amp; Berk, M. (2023). Major depressive disorder. <em>Nature Reviews Disease Primers</em>, <em>9</em>(44). https://doi.org/10.1038/s41572-023-00454-1</li>
+          <li>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.; DSM-5-TR). American Psychiatric Association.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({ hash: true });
+  </script>
+</body>
+</html>
