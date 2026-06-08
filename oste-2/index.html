@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introdução à programação em R</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+  <style>
+    :root {
+      --r-background-color: #0b1120;
+      --r-main-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-heading-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --r-main-color: #e2e8f0;
+      --r-heading-color: #f8fafc;
+      --r-heading-text-shadow: none;
+      --r-link-color: #7dd3fc;
+      --r-link-color-hover: #bae6fd;
+      --r-selection-background-color: #1e3a5f;
+      --r-block-margin: 0.8em;
+    }
+
+    .reveal {
+      background: linear-gradient(160deg, #0b1120 0%, #0f172a 50%, #0c1445 100%);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      color: var(--r-main-color);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--r-heading-color);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal h1 {
+      font-size: 1.9em;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.2em;
+      display: inline-block;
+    }
+
+    .reveal h2 {
+      font-size: 1.5em;
+      color: #93c5fd;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+
+    .reveal ul {
+      margin-top: 0.5em;
+    }
+
+    .reveal ul li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .reveal em {
+      color: #c4b5fd;
+      font-style: italic;
+    }
+
+    .reveal a {
+      color: var(--r-link-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+    }
+
+    .reveal a:hover {
+      color: var(--r-link-color-hover);
+      border-bottom-color: var(--r-link-color-hover);
+    }
+
+    .reveal .slides section:first-child h1 {
+      border-bottom-color: #60a5fa;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slides section:first-child h2 {
+      color: #94a3b8;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+
+    .reveal .slides section:first-child p {
+      color: #64748b;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+    }
+
+    .reveal .progress {
+      background: rgba(15, 23, 42, 0.6);
+      color: #3b82f6;
+    }
+
+    .reveal .controls button {
+      color: #3b82f6;
+    }
+
+    .reveal .controls button:hover {
+      color: #60a5fa;
+    }
+
+    .reveal .slide-image-modern {
+      display: block;
+      max-height: 30vh;
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(59, 130, 246, 0.2),
+                  0 0 48px rgba(59, 130, 246, 0.1);
+      padding-block: 1.25rem;
+      padding-inline: 4.5rem;
+      background: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .reveal .two-column-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .reveal .two-column-layout .text-column {
+      flex: 1;
+    }
+
+    .reveal .two-column-layout .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .reveal .two-column-layout .image-column img {
+      max-width: 100%;
+      max-height: 40vh;
+    }
+
+    .reveal .slide-refs ul {
+      font-size: 0.72em;
+      line-height: 1.45;
+    }
+
+    .reveal .slide-quote {
+      margin: 1em 0 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid #3b82f6;
+      background: #020617;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88em;
+      line-height: 1.55;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+                  inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+    }
+
+    .reveal .slide-quote p {
+      margin: 0;
+      font-style: italic;
+      color: #f8fafc;
+    }
+
+    .reveal .slide-quote footer {
+      margin-top: 0.85em;
+      font-size: 0.9em;
+      font-style: normal;
+      color: #bae6fd;
+      text-align: right;
+    }
+
+    .reveal .slide-quote cite {
+      font-style: normal;
+    }
+
+    .reveal .slide-vignette-compact h2 {
+      font-size: 1.25em;
+      margin-bottom: 0.35em;
+    }
+
+    .reveal .slide-vignette-compact p {
+      font-size: 0.72em;
+      line-height: 1.38;
+      margin: 0.32em 0 0;
+      opacity: 0.98;
+      text-align: justify;
+    }
+
+    .reveal .slide-vignette-compact p + p {
+      margin-top: 0.45em;
+      font-size: 0.68em;
+      line-height: 1.35;
+    }
+
+    .reveal .slide-table-milestones h2 {
+      margin-bottom: 0.45em;
+    }
+
+    .reveal .slide-table-milestones table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      line-height: 1.35;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .reveal .slide-table-milestones th,
+    .reveal .slide-table-milestones td {
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.4em 0.5em;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .reveal .slide-table-milestones th {
+      color: #93c5fd;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .reveal .slide-period-domains h3 {
+      color: #a5b4fc;
+      font-size: 0.95em;
+      margin: 0.65em 0 0.25em;
+    }
+
+    .reveal .slide-period-domains h3:first-of-type {
+      margin-top: 0.35em;
+    }
+
+    .reveal .slide-period-domains ul {
+      margin-top: 0.25em;
+    }
+
+    .reveal .slide-life-cycle-timeline h2 {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-life-cycle-timeline > ul {
+      margin-bottom: 0.85em;
+    }
+
+    .reveal .life-cycle-timeline {
+      margin-top: 0.45em;
+      font-size: 0.48em;
+      line-height: 1.28;
+    }
+
+    .reveal .life-cycle-timeline__row {
+      position: relative;
+      padding-top: 0.65em;
+      margin-top: 4.35em;
+      margin-bottom: 4.35em;
+    }
+
+    .reveal .life-cycle-timeline__row:last-child {
+      margin-bottom: 0;
+    }
+
+    .reveal .life-cycle-timeline__row-line {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      top: 0.22em;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #93c5fd);
+      border-radius: 2px 0 0 2px;
+      opacity: 0.95;
+    }
+
+    .reveal .life-cycle-timeline__row-line::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid #93c5fd;
+    }
+
+    .reveal .life-cycle-timeline__stops {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.35em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal .life-cycle-timeline__stop {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 0 0.2em;
+    }
+
+    .reveal .life-cycle-timeline__dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 0.4em;
+      background: #bfdbfe;
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #0b1120;
+    }
+
+    .reveal .life-cycle-timeline__label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 1.22;
+    }
+
+    .reveal .life-cycle-timeline__age {
+      display: block;
+      margin-top: 0.3em;
+      color: #94a3b8;
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+    .reveal pre {
+      position: relative;
+      margin: 0.75em 0 0;
+      padding: 0.65em 2.35em 0.65em 0.85em;
+      text-align: left;
+      max-width: 100%;
+      border-radius: 8px;
+      background: #020617;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.8);
+    }
+
+    .reveal pre code {
+      display: block;
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      font-size: 1.2em;
+      line-height: 1.45;
+      color: #e2e8f0;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .reveal a.code-run-link {
+      position: absolute;
+      top: 50%;
+      right: 0.45em;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.85em;
+      height: 1.85em;
+      margin: 0;
+      padding: 0;
+      border-bottom: none;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.75);
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.35);
+      opacity: 0.9;
+      color: var(--r-link-color);
+    }
+
+    .reveal a.code-run-link:hover {
+      border-bottom: none;
+      opacity: 1;
+      color: var(--r-link-color-hover);
+      background: rgba(30, 58, 95, 0.85);
+    }
+
+    .reveal a.code-run-link .code-run-link__icon {
+      width: 1.05em;
+      height: 1.05em;
+      flex-shrink: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Introdução à programação em R</h1>
+        <h2>Coding Dojo Randori</h2>
+      </section>
+
+      <section>
+        <h2>Funcionamento da atividade</h2>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/3cffh1T9jgFPd" target=_blank>
+          <h2>Problema 1</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/1Tvv8G3PuWDE3" target=_blank>
+          <h2>Problema 2</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/5udd5tuOgHnLc" target=_blank>
+          <h2>Problema 3</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/3HhhVqUjlLbes" target=_blank>
+          <h2>Problema 4</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/8rXXvjby64Yo2" target=_blank>
+          <h2>Problema 5</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/3udd5GYruH38C" target=_blank>
+          <h2>Problema 6</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/8wjjeHXrgTsrm" target=_blank>
+          <h2>Problema 7</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/6J88UAmzf74B7" target=_blank>
+          <h2>Problema 8</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/7J88UsCYj7AK4" target=_blank>
+          <h2>Problema 9</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/9ettmlUDB8VCg" target=_blank>
+          <h2>Problema 10</h2>
+        </a>
+      </section>
+
+      <section>
+        <a href="https://www.programiz.com/online-compiler/2lKKCiicWXDyk" target=_blank>
+          <h2>Problema 11 - Desafion final!</h2>
+        </a>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({ hash: true });
+  </script>
+</body>
+</html>
